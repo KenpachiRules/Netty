@@ -1,0 +1,19 @@
+# eclipse parts
+bin/
+.metadata
+.lck
+.classpath
+.project
+.settings/
+.cache-main
+
+# gradle parts
+.gradle/
+
+# Build artifacts at all
+*.class
+build/
+*.jar
+*.log
+*.bak
+

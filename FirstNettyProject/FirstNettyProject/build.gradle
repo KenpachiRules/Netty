@@ -12,11 +12,17 @@ eclipse {
 }
 
 dependencies{
-	compile 'io.netty:netty-all:4.1.42.Final'
+	compile 'io.netty:netty-all:4.1.42.Final', files('C:\\MyProject\\MyUtils\\ScalaUtils\\ScalaUtils\\build\\libs\\com.hari.learning.my.scalautils.jar')
 	runtime 'io.netty:netty-all:4.1.42.Final'
+	testCompile 'org.testng:testng:6.8'
 }
 
 task copyDeps(type:Copy) {
 	from configurations.compile
 	into 'build/deps'
+}
+
+task copyTestDeps(type:Copy) {
+    from configurations.testCompile 
+    into 'build/deps/tests'
 }

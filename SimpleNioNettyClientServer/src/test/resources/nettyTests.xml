@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MyNettyClientServerSuite" verbose="1">
+    <parameter name="ipAddress" value= "192.168.0.108"/>
+	<test name="SendMessage">
+		<classes>
+			<class name="com.hari.learning.nio.netty.client.test.RunHelloWorldTests" />
+		</classes>
+	</test>
+</suite>

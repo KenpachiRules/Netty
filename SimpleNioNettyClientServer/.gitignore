@@ -5,6 +5,7 @@ bin/
 .classpath
 .project
 .settings/
+.cache-tests
 
 # gradle parts
 .gradle/

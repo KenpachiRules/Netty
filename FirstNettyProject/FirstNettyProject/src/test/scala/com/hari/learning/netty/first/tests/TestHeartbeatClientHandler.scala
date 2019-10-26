@@ -13,7 +13,7 @@ class TestHeartbeatClientHandler extends SimpleChannelInboundHandler[Heartbeat] 
   val beats: Iterator[Heartbeat] = Range(0, 10).map(i => Heartbeat.beat(UUID.randomUUID().toString)).toIterator
 
   override def channelRead0(ctx: ChannelHandlerContext, msg: Heartbeat): Unit = {
-    info(s"Received msg is ${msg}")
+    info(s"Received message ${msg}")
     beats.foreach(ctx.writeAndFlush)
     ctx.writeAndFlush(Heartbeat.abortBeat(UUID.randomUUID().toString))
   }
@@ -28,4 +28,12 @@ class TestHeartbeatClientHandler extends SimpleChannelInboundHandler[Heartbeat] 
     severe(s"Failed due to ${cause}")
     ctx.close
   }
+}
+
+object TestHeartbeatClientHandler {
+
+  def apply(): TestHeartbeatClientHandler = new TestHeartbeatClientHandler()
+
+  def newInstance(): TestHeartbeatClientHandler = apply() // new instance
+
 }

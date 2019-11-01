@@ -1,0 +1,28 @@
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+
+repositories{
+   mavenCentral()
+   mavenLocal()
+}
+
+dependencies {
+  implementation 'org.scala-lang:scala-library:2.11.8'
+  compile 'io.netty:netty-all:4.1.42.Final'
+  testCompile 'org.testng:testng:6.8'
+}
+
+eclipse {
+	classpath {
+		downloadJavadoc = true
+		downloadSources = true
+	}
+}
+
+
+test {
+	useTestNG() {
+  	useDefaultListeners = true
+    suites 'src/test/resources/byteBuffTests.xml'
+	}
+}

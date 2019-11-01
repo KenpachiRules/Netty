@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ByteBuffTests" verbose="1">
+	<test name="HelloWorldTest">
+		<classes>
+			<class name="com.hari.learning.netty.bytebuf.test.TestReadWrite" />
+		</classes>
+	</test>
+</suite>

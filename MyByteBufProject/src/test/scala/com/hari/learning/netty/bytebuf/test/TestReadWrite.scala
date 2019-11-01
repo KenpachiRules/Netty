@@ -46,4 +46,12 @@ class TestReadWrite {
     assert(I_AM_HARI.equals(helloWorld.toString(CharsetUtil.UTF_8)))
   }
 
+  @Test
+  def clearByteBuf: Unit = {
+    val newHW = helloWorld.copy
+    newHW.clear
+    if (newHW.isReadable)
+      throw new AssertionError(s" Error,should not contain data post clear is invoked ${helloWorld.readableBytes()}")
+  }
+
 }

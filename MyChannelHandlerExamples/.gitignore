@@ -5,6 +5,27 @@ bin/
 .classpath
 .project
 .settings/
+.cache-tests
+
+# gradle parts
+.gradle/
+
+# Build artifacts at all
+*.class
+build/
+test-output/
+*.jar
+*.log
+*.bak
+
+# eclipse parts
+bin/
+.metadata
+.lck
+.classpath
+.project
+.settings/
+.cache-main
 
 # gradle parts
 .gradle/

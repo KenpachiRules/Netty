@@ -1,0 +1,23 @@
+apply plugin :'scala'
+apply plugin :'eclipse'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+ 
+ implementation 'org.scala-lang:scala-library:2.11.8'
+ compile 'io.netty:netty-all:4.1.42.Final','com.hari.learning:my.scalautils:1.0.0'
+ runtime 'io.netty:netty-all:4.1.42.Final','com.hari.learning:my.scalautils:1.0.0'
+ testCompile 'org.testng:testng:6.8'
+
+}
+
+test {
+  useTestNG() {
+      useDefaultListeners = true
+      suites 'src/test/resources/myhandlertests.xml'      
+   }
+}

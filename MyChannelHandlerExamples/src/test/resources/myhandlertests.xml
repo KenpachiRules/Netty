@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MyHandlerTestSuite" verbose="1">
+	<test name="ValidateMyHandler">
+	    <parameter name="server_host" value="localhost"
+	    <parameter name="server_port" value="15890"/>
+		<classes>
+			<class name="com.hari.learning.netty.handler.tests.MyHandlerTests" />
+		</classes>
+	</test>
+</suite>

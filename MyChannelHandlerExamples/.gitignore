@@ -37,3 +37,4 @@ build/
 *.log
 *.bak
 
+/target/

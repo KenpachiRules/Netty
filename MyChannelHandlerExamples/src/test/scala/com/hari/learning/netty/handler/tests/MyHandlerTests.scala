@@ -43,10 +43,11 @@ class MyHandlerTests {
             Thread.sleep(1000)
             if (iter.hasNext) {
               ctx.writeAndFlush(Unpooled.copiedBuffer(iter.next, CharsetUtil.UTF_8))
-              ReferenceCountUtil.release(obj)
             } else
               ctx.close
+            ReferenceCountUtil.release(obj)
           }
+
         }
         serverPropsInit.map(f => f(List(HelloHandler(), ToUpperHandler(), printClientHandler)))
       }
